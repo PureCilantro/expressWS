@@ -4,7 +4,12 @@
   "description": "An attempt at an API REST or something",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PureCilantro/expressWS.git"
   },
   "keywords": [
     "api",
@@ -12,9 +17,14 @@
     "express",
     "nodejs"
   ],
+  "bugs": {
+    "url": "https://github.com/PureCilantro/expressWS/issues"
+  },
+  "homepage": "https://github.com/PureCilantro/expressWS#readme",
   "author": "Alan Espinosa",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
   }
 }
