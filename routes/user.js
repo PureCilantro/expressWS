@@ -3,7 +3,7 @@ const user = express.Router();
 const DB = require('../config/database');
 const jwt = require('jsonwebtoken');
 
-user.post('/', async(req, res, next) => {
+user.post('/signin', async(req, res, next) => {
     const { user_name, user_mail, user_password} = req.body;
     if (user_name && user_mail && user_password ) {
         let query = "INSERT INTO users(user_name, user_mail, user_password)"
@@ -30,10 +30,9 @@ user.post('/login', async (req, res, next) => {
         if (rows.length == 1) {
             const token = jwt.sign({
                 user_id: rows[0].user_id,
-                user_mail: rows[0].user_mail,
+                user_mail: rows[0].user_mail
             }, "debugkey");
-
-            return res.status(201).json({ code: 201, message: token});
+            return res.status(200).json({ code: 200, message: token});
         }
         return res.status(401).json({ code: 401, message: "Registro no encontrado"});
     }
