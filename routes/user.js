@@ -34,7 +34,7 @@ user.post('/login', async (req, res, next) => {
             }, "debugkey");
             return res.status(200).json({ code: 200, message: token});
         }
-        return res.status(200).json({ code: 200, message: "Registro no encontrado"});
+        return res.status(201).json({ code: 201, message: "Registro no encontrado"});
     }
     return res.status(500).json({ code: 500, message: "Capos incompletos"});
 })
